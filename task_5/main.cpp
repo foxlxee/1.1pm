@@ -60,6 +60,15 @@ public:
         }
     }
 
+    // деструктор, который освобождает память
+    ~IntVector() {
+        delete[] m_arr;
+
+#if DEBUG
+        std::cout << "destructor called";
+#endif
+    }
+
     // метод, который добавляет элемент в конец
     void add(int value) {
         if (m_size >= m_capacity) {
